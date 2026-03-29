@@ -4,3 +4,5 @@ resources:
   - ../../base
 patches:
   - path: patch-argocd-cm.yaml
+  - path: patch-redis-ha-haproxy.yaml
+  - path: patch-redis-ha-server.yaml
