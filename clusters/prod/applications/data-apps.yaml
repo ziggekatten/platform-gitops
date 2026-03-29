@@ -6,7 +6,7 @@ metadata:
 spec:
   project: apps-prod
   source:
-    repoURL: https://git.example.com/your-org/data-apps-gitops.git
+    repoURL: https://github.com/ziggekatten/data-apps-gitops
     targetRevision: main
     path: bootstrap/prod
   destination:

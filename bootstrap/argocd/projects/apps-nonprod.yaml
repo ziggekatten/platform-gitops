@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Application workloads for dev and test
   sourceRepos:
-    - https://git.example.com/your-org/data-apps-gitops.git
+    - https://github.com/ziggekatten/data-apps-gitops
   destinations:
     - name: in-cluster
       namespace: argocd

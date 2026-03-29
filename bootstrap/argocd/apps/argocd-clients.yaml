@@ -6,7 +6,7 @@ metadata:
 spec:
   project: platform
   source:
-    repoURL: https://git.example.com/your-org/platform-gitops.git
+    repoURL: https://github.com/ziggekatten/platform-gitops
     targetRevision: main
     path: bootstrap/argocd/install/overlays/clients
   destination:

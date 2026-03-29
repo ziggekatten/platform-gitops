@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Cluster platform components
   sourceRepos:
-    - https://git.example.com/your-org/platform-gitops.git
+    - https://github.com/ziggekatten/platform-gitops
   destinations:
     - name: in-cluster
       namespace: "*"

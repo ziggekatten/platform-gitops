@@ -22,7 +22,7 @@ spec:
     spec:
       project: platform
       source:
-        repoURL: https://git.example.com/your-org/platform-gitops.git
+        repoURL: https://github.com/ziggekatten/platform-gitops
         targetRevision: main
         path: platform/{{.component}}/base
       destination:
