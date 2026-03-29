@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gatekeeper-placeholder
+  namespace: argocd
+data:
+  note: Replace this placeholder with the Gatekeeper Helm chart or upstream manifests.

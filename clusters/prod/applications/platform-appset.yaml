@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: platform-prod
+  namespace: argocd
+spec:
+  goTemplate: true
+  generators:
+    - list:
+        elements:
+          - component: namespaces
+          - component: gatekeeper
+          - component: gateway
+          - component: network-policies
+          - component: policies
+  template:
+    metadata:
+      name: platform-{{.component}}-prod
+      labels:
+        env: prod
+        app.kubernetes.io/part-of: platform
+    spec:
+      project: platform
+      source:
+        repoURL: https://git.example.com/your-org/platform-gitops.git
+        targetRevision: main
+        path: platform/{{.component}}/base
+      destination:
+        name: in-cluster
+        namespace: argocd
+      syncPolicy:
+        syncOptions:
+          - ServerSideApply=true

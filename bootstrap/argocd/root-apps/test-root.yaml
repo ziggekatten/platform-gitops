@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-root
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    repoURL: https://git.example.com/your-org/platform-gitops.git
+    targetRevision: main
+    path: clusters/test
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

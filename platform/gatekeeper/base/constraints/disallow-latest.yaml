@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gatekeeper-disallow-latest-placeholder
+  namespace: argocd
+data:
+  note: Add a policy to block mutable image tags like latest.

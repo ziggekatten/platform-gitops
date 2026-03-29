@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: apps-nonprod
+  namespace: argocd
+spec:
+  description: Application workloads for dev and test
+  sourceRepos:
+    - https://git.example.com/your-org/data-apps-gitops.git
+  destinations:
+    - name: in-cluster
+      namespace: argocd
+    - name: in-cluster
+      namespace: trino
+    - name: in-cluster
+      namespace: openmetadata
+    - name: in-cluster
+      namespace: superset
+    - name: in-cluster
+      namespace: lakekeeper
+    - name: in-cluster
+      namespace: openeverest
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

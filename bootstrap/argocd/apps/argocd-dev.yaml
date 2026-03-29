@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-dev
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    repoURL: https://git.example.com/your-org/platform-gitops.git
+    targetRevision: main
+    path: bootstrap/argocd/install/overlays/dev
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

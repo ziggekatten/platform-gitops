@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gatekeeper-required-labels-placeholder
+  namespace: argocd
+data:
+  note: Add a ConstraintTemplate and Constraint that enforces your standard labels.

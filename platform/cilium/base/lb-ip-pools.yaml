@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cilium-lb-ip-pools-placeholder
+  namespace: argocd
+data:
+  note: Replace with the Cilium LoadBalancer IP pool resources you announce over BGP.

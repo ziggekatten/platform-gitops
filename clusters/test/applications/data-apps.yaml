@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: data-apps-test
+  namespace: argocd
+spec:
+  project: apps-nonprod
+  source:
+    repoURL: https://git.example.com/your-org/data-apps-gitops.git
+    targetRevision: main
+    path: bootstrap/test
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true

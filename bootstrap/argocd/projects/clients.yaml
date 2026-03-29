@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: clients
+  namespace: argocd
+spec:
+  description: Client-specific workloads
+  sourceRepos:
+    - https://git.example.com/your-org/data-apps-gitops.git
+  destinations:
+    - name: in-cluster
+      namespace: argocd
+    - name: in-cluster
+      namespace: client-*
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  orphanedResources:
+    warn: true

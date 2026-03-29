@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cilium-bgp-policies-placeholder
+  namespace: argocd
+data:
+  note: Replace with Cilium BGPPeeringPolicy or v2 BGP resources for this cluster.
