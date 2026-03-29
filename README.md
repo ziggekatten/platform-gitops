@@ -14,6 +14,7 @@ This starter includes:
 
 Note: Cilium is assumed to already exist in the clusters and is not managed by Argo CD in this starter.
 Argo CD manages Gateway API resources and `CiliumNetworkPolicy` objects only.
+The repo also contains a manual Cilium BGP advertisement manifest in `platform/cilium/base/bgp-policies.yaml` so Gateway-created `LoadBalancer` services can be advertised consistently from Git without putting the Cilium installation itself under Argo CD.
 
 The current Gateway starter is wired for the Cilium Gateway controller discovered in the cluster:
 

@@ -4,4 +4,4 @@ metadata:
   name: cilium-lb-ip-pools-placeholder
   namespace: argocd
 data:
-  note: Replace with the Cilium LoadBalancer IP pool resources you announce over BGP.
+  note: Keep your existing Cilium LoadBalancer IP pool resources here if you want them tracked in Git, but this component is not Argo-managed in the current setup.
